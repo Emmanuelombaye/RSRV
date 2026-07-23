@@ -1,0 +1,51 @@
+/* GENERATED from design-tokens.json — edit the JSON, regenerate this. */
+/* RSRV / Reserve Molecular design tokens. Source: Brand_Foundation_Reference.md v0.3.2
+   §5.2 (color), §5.3 (typography), §5.4 (graphic language). Spacing scale is base-8,
+   added for build use (not in §5). Naming: --rm-* per §5.2. */
+
+:root {
+  /* ---- Color (§5.2) — dark mode is the default; champagne never fills ---- */
+  --rm-obsidian: #0B0B0D;   /* dominant field (~70%) */
+  --rm-charcoal: #17171A;   /* elevated surfaces, cards */
+  --rm-bone: #F3F1EC;       /* primary type on dark; light-mode field */
+  --rm-platinum: #DCDAD4;   /* secondary type, dividers; champagne fallback */
+  --rm-espresso: #3A2E28;   /* warm accent surfaces, editorial blocks */
+  --rm-champagne: #C2A15F;  /* hairlines, seal, deboss — sparingly */
+  --rm-silver: #9DA1A6;     /* data / technical annotation */
+
+  /* ---- Font family (§5.3) ---- */
+  --rm-font-display: "Newsreader", Georgia, "Times New Roman", serif;
+  --rm-font-body: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --rm-font-data: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* ---- Font weight (§5.1, §5.3) ---- */
+  --rm-weight-regular: 400;  /* Archivo Regular — body; endorsement line */
+  --rm-weight-medium: 500;   /* Archivo Medium — body alt; house wordmark */
+  --rm-weight-bold: 700;     /* Archivo SemiExpanded Bold — RSRV lockup */
+  --rm-weight-display: 500;  /* Newsreader Medium — display/headlines, opsz auto (§5.3) */
+
+  /* ---- Tracking / letter-spacing (§5.1, §5.3) — em, converted from % ---- */
+  --rm-tracking-lockup-primary-min: 0.18em;  /* RSRV lockup +18% (RSVP mitigation) */
+  --rm-tracking-lockup-primary-max: 0.24em;  /* RSRV lockup +24% */
+  --rm-tracking-endorsement: 0.10em;         /* BY RESERVE MOLECULAR +10% */
+  --rm-tracking-house-wordmark-min: 0.12em;  /* house wordmark +12% */
+  --rm-tracking-house-wordmark-max: 0.16em;  /* house wordmark +16% */
+  --rm-tracking-data: 0.08em;                /* data / annotation +8% */
+
+  /* ---- Graphic language (§5.4) ---- */
+  --rm-hairline-min: 0.5px;
+  --rm-hairline-max: 1px;
+  --rm-hairline-default: 1px;
+  --rm-motif-max-per-surface: 1;  /* never more than one motif per surface */
+
+  /* ---- Spacing scale (base-8; not in §5) ---- */
+  --rm-space-0: 0px;
+  --rm-space-050: 4px;   /* half-step */
+  --rm-space-100: 8px;   /* base unit */
+  --rm-space-200: 16px;
+  --rm-space-300: 24px;
+  --rm-space-400: 32px;
+  --rm-space-500: 40px;
+  --rm-space-600: 48px;
+  --rm-space-800: 64px;
+}

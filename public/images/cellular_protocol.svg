@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <radialGradient id="obsidianGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#17171A" stop-opacity="0.9"/>
+      <stop offset="70%" stop-color="#0B0B0D" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#0B0B0D" stop-opacity="1"/>
+    </radialGradient>
+    <linearGradient id="champagneGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C2A15F" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#F3F1EC" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#C2A15F" stop-opacity="0.2"/>
+    </linearGradient>
+    <filter id="subtleGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background field -->
+  <rect width="800" height="500" fill="#0B0B0D"/>
+  <rect width="800" height="500" fill="url(#obsidianGlow)"/>
+
+  <!-- Interlocking obsidian rings motif -->
+  <g filter="url(#subtleGlow)">
+    <circle cx="340" cy="250" r="130" fill="none" stroke="url(#champagneGold)" stroke-width="1.5" stroke-dasharray="400 50"/>
+    <circle cx="460" cy="250" r="130" fill="none" stroke="url(#champagneGold)" stroke-width="1" stroke-dasharray="300 100"/>
+    <circle cx="400" cy="210" r="80" fill="none" stroke="#DCDAD4" stroke-opacity="0.25" stroke-width="0.75"/>
+    <circle cx="400" cy="290" r="80" fill="none" stroke="#C2A15F" stroke-opacity="0.4" stroke-width="0.75"/>
+  </g>
+
+  <!-- Ambient light particle dots -->
+  <circle cx="400" cy="250" r="2" fill="#C2A15F"/>
+  <circle cx="340" cy="120" r="1.5" fill="#F3F1EC" opacity="0.6"/>
+  <circle cx="460" cy="380" r="1.5" fill="#F3F1EC" opacity="0.6"/>
+</svg>

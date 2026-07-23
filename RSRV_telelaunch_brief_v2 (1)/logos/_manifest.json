@@ -1,0 +1,28 @@
+{
+  "generated": [
+    "rsrv-primary-dark.svg",
+    "rsrv-primary-light.svg",
+    "rsrv-primary-dark-rule-platinum.svg",
+    "rsrv-primary-light-rule-platinum.svg",
+    "rsrv-wordmark-dark.svg",
+    "rsrv-wordmark-light.svg",
+    "rm-house-dark.svg",
+    "rm-house-light.svg",
+    "rm-house-stacked-dark.svg",
+    "rm-house-stacked-light.svg",
+    "rm-micro-dark.svg",
+    "rm-micro-light.svg",
+    "rsrv-avatar.svg",
+    "favicon.svg"
+  ],
+  "F": 200,
+  "TRACK_RSRV": 0.2,
+  "TRACK_END": 0.1,
+  "TRACK_HOUSE": 0.14,
+  "RATIO": 0.24,
+  "HEADROOM": 1.02,
+  "notes": {
+    "ruleUsage": "Champagne rule: dark fields/foil/deboss only. PLATINUM RULE IS THE LIGHT-MODE DEFAULT — use rsrv-primary-light-rule-platinum.svg for light-mode surfaces (Brand_Foundation v0.3.4 §5.1).",
+    "sizeFloor": "Primary lockup >= ~96px height; standalone RSRV below; RM at <=16px unchanged (v0.3.4 §5.1)."
+  }
+}
