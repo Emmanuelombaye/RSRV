@@ -12,7 +12,7 @@ export default function BiomarkerExplorer() {
 
   return (
     <section id="biomarkers" className="section">
-      <div style={{ maxWidth: 850 }}>
+      <div style={{ maxWidth: 850 }} className="reveal-up">
         <span className="data-annotation section-label">
           Diagnostic Foundation
         </span>
@@ -27,7 +27,7 @@ export default function BiomarkerExplorer() {
       </div>
 
       {/* Category Tabs */}
-      <div className="biomarker-nav">
+      <div className="biomarker-nav reveal-up">
         {BIOMARKER_CATEGORIES.map((cat) => (
           <button
             key={cat.id}
@@ -43,7 +43,7 @@ export default function BiomarkerExplorer() {
       </div>
 
       {/* Biomarker Grid */}
-      <div className="biomarker-grid">
+      <div className="biomarker-grid reveal-stagger">
         {filteredBiomarkers.map((bm) => (
           <div key={bm.name} className="biomarker-card">
             <div>
@@ -55,6 +55,56 @@ export default function BiomarkerExplorer() {
               </div>
               <h3 className="bm-name font-display">{bm.name}</h3>
               <p className="bm-desc">{bm.description}</p>
+            </div>
+
+            {/* Visual Biomarker Telemetry Range Bar */}
+            <div
+              style={{
+                margin: "1rem 0",
+                background: "var(--rm-obsidian)",
+                padding: "0.75rem 1rem",
+                borderRadius: "3px",
+                border: "1px solid rgba(220,218,212,0.06)",
+              }}
+            >
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  fontSize: "0.7rem",
+                  marginBottom: "0.4rem",
+                }}
+              >
+                <span className="data-annotation" style={{ fontSize: "0.65rem" }}>
+                  Range Optimization Indicator
+                </span>
+                <span style={{ color: "var(--rm-champagne)", fontWeight: 500 }}>
+                  Target: {bm.rsrvTarget}
+                </span>
+              </div>
+              <div
+                style={{
+                  width: "100%",
+                  height: "4px",
+                  background: "rgba(220,218,212,0.12)",
+                  borderRadius: "2px",
+                  position: "relative",
+                  overflow: "hidden",
+                }}
+              >
+                <div
+                  style={{
+                    position: "absolute",
+                    left: "30%",
+                    width: "45%",
+                    height: "100%",
+                    background:
+                      "linear-gradient(90deg, var(--rm-platinum) 0%, var(--rm-champagne) 100%)",
+                    borderRadius: "2px",
+                    boxShadow: "0 0 8px rgba(194, 161, 95, 0.6)",
+                  }}
+                />
+              </div>
             </div>
 
             <div className="bm-metrics">

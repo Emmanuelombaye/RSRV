@@ -16,7 +16,7 @@ export default function ProtocolGrid({ onSelect, onVerify }: ProtocolGridProps) 
 
   return (
     <section id="protocols" className="section">
-      <div style={{ maxWidth: 800 }}>
+      <div style={{ maxWidth: 800 }} className="reveal-up">
         <span className="data-annotation section-label">Protocol Lineup</span>
         <h2 className="section-title font-display">
           Targeted Optimization Protocols
@@ -28,7 +28,7 @@ export default function ProtocolGrid({ onSelect, onVerify }: ProtocolGridProps) 
         </p>
       </div>
 
-      <div className="protocols-grid">
+      <div className="protocols-grid reveal-stagger">
         {RSRV_PROTOCOLS.map((p) => (
           <article key={p.id} className="protocol-card">
             <div>

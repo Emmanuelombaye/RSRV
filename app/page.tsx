@@ -12,9 +12,12 @@ import VerificationDrawer from "./components/VerificationDrawer";
 import ClinicalFAQ from "./components/ClinicalFAQ";
 import Footer from "./components/Footer";
 import IntakeWizard from "./components/IntakeWizard";
+import { useScrollReveal } from "./lib/useScrollReveal";
 import type { Protocol } from "./lib/protocols";
 
 export default function Home() {
+  useScrollReveal();
+
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [intakeOpen, setIntakeOpen] = useState(false);
   const [selectedProtocol, setSelectedProtocol] = useState<Protocol | null>(null);

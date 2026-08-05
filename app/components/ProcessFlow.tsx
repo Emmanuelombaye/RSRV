@@ -28,7 +28,7 @@ export default function ProcessFlow() {
 
   return (
     <section id="governance" className="section" style={{ borderTop: "1px solid rgba(220,218,212,0.06)" }}>
-      <div style={{ maxWidth: 850 }}>
+      <div style={{ maxWidth: 850 }} className="reveal-up">
         <span className="data-annotation section-label">
           Pharmacy & Clinical Governance
         </span>
@@ -41,7 +41,7 @@ export default function ProcessFlow() {
         </p>
       </div>
 
-      <div className="process-pipeline">
+      <div className="process-pipeline reveal-stagger">
         {steps.map((s) => (
           <div key={s.num} className="process-step-card">
             <span className="data-annotation" style={{ display: "block", marginBottom: "0.5rem" }}>
