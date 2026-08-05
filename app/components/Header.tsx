@@ -29,6 +29,17 @@ export default function Header({ onOpenDrawer, onOpenIntake }: HeaderProps) {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [mobileMenuOpen]);
+
   return (
     <header className={`header-nav ${scrolled ? "scrolled" : ""}`}>
       <div className="header-inner">
