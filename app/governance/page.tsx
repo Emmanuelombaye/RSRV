@@ -6,6 +6,7 @@ import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 import VerificationDrawer from "@/app/components/VerificationDrawer";
 import IntakeWizard from "@/app/components/IntakeWizard";
+import ProcessFlow from "@/app/components/ProcessFlow";
 import { useScrollReveal } from "@/app/lib/useScrollReveal";
 
 export default function GovernancePage() {
@@ -67,6 +68,11 @@ export default function GovernancePage() {
             />
           </div>
 
+          {/* Process Flow Compounding Pipeline */}
+          <div style={{ margin: "2rem 0" }}>
+            <ProcessFlow />
+          </div>
+
           {/* Standards & Compliance Grid */}
           <div
             className="standards-grid reveal-stagger"
@@ -74,7 +80,7 @@ export default function GovernancePage() {
               display: "grid",
               gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
               gap: "2rem",
-              marginTop: "3rem",
+              marginTop: "4rem",
             }}
           >
             <div
@@ -83,8 +89,35 @@ export default function GovernancePage() {
                 padding: "2rem",
                 borderRadius: "4px",
                 border: "1px solid rgba(220,218,212,0.08)",
+                overflow: "hidden",
+                position: "relative",
               }}
             >
+              <div
+                style={{
+                  position: "relative",
+                  width: "calc(100% + 4rem)",
+                  height: "110px",
+                  margin: "-2rem -2rem 1.25rem -2rem",
+                  overflow: "hidden",
+                  borderBottom: "1px solid rgba(194,161,95,0.2)",
+                }}
+              >
+                <Image
+                  src="/images/cellular_protocol.png"
+                  alt="Sterile Compounding Environment"
+                  fill
+                  style={{ objectFit: "cover", opacity: 0.85 }}
+                />
+                <div
+                  style={{
+                    position: "absolute",
+                    inset: 0,
+                    background:
+                      "linear-gradient(180deg, rgba(8,8,10,0.1) 0%, rgba(18,18,22,0.85) 75%, rgba(18,18,22,1) 100%)",
+                  }}
+                />
+              </div>
               <span className="data-annotation" style={{ color: "var(--rm-champagne)" }}>
                 USP &lt;795&gt; / &lt;797&gt; / &lt;800&gt; Standards
               </span>
@@ -92,7 +125,7 @@ export default function GovernancePage() {
                 Sterile Compounding Environment
               </h3>
               <p style={{ color: "var(--rm-platinum)", fontSize: "0.9rem", lineHeight: 1.7 }}>
-                Operating strictly within Class 5 laminar flow cleanrooms and negative-pressure containment suites, every formulation is compounding individually with high-purity active pharmaceutical ingredients (API).
+                Operating strictly within Class 5 laminar flow cleanrooms and negative-pressure containment suites, every formulation is compounded individually with high-purity active pharmaceutical ingredients (API).
               </p>
             </div>
 
@@ -102,8 +135,35 @@ export default function GovernancePage() {
                 padding: "2rem",
                 borderRadius: "4px",
                 border: "1px solid rgba(220,218,212,0.08)",
+                overflow: "hidden",
+                position: "relative",
               }}
             >
+              <div
+                style={{
+                  position: "relative",
+                  width: "calc(100% + 4rem)",
+                  height: "110px",
+                  margin: "-2rem -2rem 1.25rem -2rem",
+                  overflow: "hidden",
+                  borderBottom: "1px solid rgba(194,161,95,0.2)",
+                }}
+              >
+                <Image
+                  src="/images/cognitive_protocol.png"
+                  alt="Licensed US Physicians"
+                  fill
+                  style={{ objectFit: "cover", opacity: 0.85 }}
+                />
+                <div
+                  style={{
+                    position: "absolute",
+                    inset: 0,
+                    background:
+                      "linear-gradient(180deg, rgba(8,8,10,0.1) 0%, rgba(18,18,22,0.85) 75%, rgba(18,18,22,1) 100%)",
+                  }}
+                />
+              </div>
               <span className="data-annotation" style={{ color: "var(--rm-champagne)" }}>
                 Licensed US Physicians
               </span>
@@ -121,8 +181,35 @@ export default function GovernancePage() {
                 padding: "2rem",
                 borderRadius: "4px",
                 border: "1px solid rgba(220,218,212,0.08)",
+                overflow: "hidden",
+                position: "relative",
               }}
             >
+              <div
+                style={{
+                  position: "relative",
+                  width: "calc(100% + 4rem)",
+                  height: "110px",
+                  margin: "-2rem -2rem 1.25rem -2rem",
+                  overflow: "hidden",
+                  borderBottom: "1px solid rgba(194,161,95,0.2)",
+                }}
+              >
+                <Image
+                  src="/images/bm_hscrp.png"
+                  alt="Analytical Batch Verification"
+                  fill
+                  style={{ objectFit: "cover", opacity: 0.85 }}
+                />
+                <div
+                  style={{
+                    position: "absolute",
+                    inset: 0,
+                    background:
+                      "linear-gradient(180deg, rgba(8,8,10,0.1) 0%, rgba(18,18,22,0.85) 75%, rgba(18,18,22,1) 100%)",
+                  }}
+                />
+              </div>
               <span className="data-annotation" style={{ color: "var(--rm-champagne)" }}>
                 Certificate of Analysis (CoA)
               </span>

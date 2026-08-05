@@ -436,29 +436,36 @@ img { max-width: 100%; display: block; }
 /* ---- Process Flow Pipeline ---- */
 .process-pipeline {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
-  margin-top: 3.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.75rem;
+  margin-top: 3rem;
   position: relative;
+  align-items: stretch;
 }
 .process-step-card {
   background: var(--rm-charcoal);
-  border: 1px solid rgba(220,218,212,0.06);
-  padding: 2.25rem 1.75rem;
-  border-radius: 3px;
+  border: 1px solid rgba(220,218,212,0.08);
+  padding: 1.75rem;
+  border-radius: 4px;
   position: relative;
-  transition: all 0.3s ease;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  overflow: hidden;
 }
 .process-step-card:hover {
-  border-color: var(--rm-champagne);
-  box-shadow: 0 12px 32px rgba(0,0,0,0.6);
+  border-color: rgba(194,161,95,0.4);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.7), 0 0 25px rgba(194,161,95,0.06);
 }
 .process-step-num {
-  font-size: 2.25rem;
+  font-size: 2rem;
   font-family: var(--rm-font-display);
   color: var(--rm-champagne);
-  opacity: 0.85;
-  margin-bottom: 1rem;
+  opacity: 0.9;
+  margin-bottom: 0.5rem;
   line-height: 1;
 }
 
