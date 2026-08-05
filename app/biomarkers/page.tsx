@@ -16,6 +16,10 @@ export default function BiomarkersPage() {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [intakeOpen, setIntakeOpen] = useState(false);
 
+  const currentCategory =
+    BIOMARKER_CATEGORIES.find((c) => c.id === activeCategory) ||
+    BIOMARKER_CATEGORIES[0];
+
   const filteredBiomarkers = RSRV_BIOMARKERS.filter(
     (b) => b.category === activeCategory
   );
@@ -48,26 +52,78 @@ export default function BiomarkersPage() {
             </p>
           </div>
 
-          {/* Editorial Banner */}
+          {/* Dynamic Brand Category Banner */}
           <div
             className="reveal-up"
             style={{
               position: "relative",
               width: "100%",
-              height: "240px",
-              borderRadius: "4px",
+              minHeight: "280px",
+              borderRadius: "6px",
               overflow: "hidden",
-              margin: "3rem 0",
-              border: "1px solid rgba(194,161,95,0.2)",
+              margin: "2.5rem 0 3rem",
+              border: "1px solid rgba(194,161,95,0.25)",
+              boxShadow: "0 20px 50px rgba(0,0,0,0.6)",
+              display: "flex",
+              alignItems: "flex-end",
             }}
           >
             <Image
-              src="/images/editorial_terrace.svg"
-              alt="Editorial Verification"
+              key={currentCategory.id}
+              src={currentCategory.image}
+              alt={currentCategory.name}
               fill
-              style={{ objectFit: "cover" }}
+              style={{ objectFit: "cover", transition: "all 0.6s ease" }}
               priority
             />
+            <div
+              style={{
+                position: "absolute",
+                inset: 0,
+                background:
+                  "linear-gradient(180deg, rgba(8,8,10,0.2) 0%, rgba(8,8,10,0.85) 70%, rgba(8,8,10,0.98) 100%)",
+              }}
+            />
+            <div
+              style={{
+                position: "relative",
+                zIndex: 2,
+                padding: "2rem 2.5rem",
+                width: "100%",
+              }}
+            >
+              <div
+                className="data-annotation"
+                style={{
+                  color: "var(--rm-champagne)",
+                  marginBottom: "0.4rem",
+                  letterSpacing: "0.15em",
+                }}
+              >
+                Category Focus • {currentCategory.count}
+              </div>
+              <h2
+                className="font-display"
+                style={{
+                  fontSize: "clamp(1.8rem, 3vw, 2.5rem)",
+                  color: "#FFFFFF",
+                  margin: "0 0 0.4rem",
+                }}
+              >
+                {currentCategory.name}
+              </h2>
+              <p
+                style={{
+                  color: "rgba(255,255,255,0.8)",
+                  fontSize: "0.95rem",
+                  maxWidth: "750px",
+                  margin: 0,
+                  lineHeight: 1.6,
+                }}
+              >
+                {currentCategory.description}
+              </p>
+            </div>
           </div>
 
           {/* Category Navigation Tabs */}

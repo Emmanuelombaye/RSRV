@@ -44,11 +44,48 @@ export interface FAQItem {
   category: string;
 }
 
-export const BIOMARKER_CATEGORIES = [
-  { id: "metabolic", name: "Metabolic & Cardiovascular", count: "14 Markers" },
-  { id: "neuro", name: "Neuro-Executive & Cognitive", count: "11 Markers" },
-  { id: "cellular", name: "Cellular & Mitochondrial", count: "10 Markers" },
-  { id: "endocrine", name: "Endocrine & Vitality", count: "12 Markers" },
+export interface BiomarkerCategory {
+  id: string;
+  name: string;
+  count: string;
+  image: string;
+  subtitle: string;
+  description: string;
+}
+
+export const BIOMARKER_CATEGORIES: readonly BiomarkerCategory[] = [
+  {
+    id: "metabolic",
+    name: "Metabolic & Cardiovascular",
+    count: "14 Markers",
+    image: "/images/metabolic_category.png",
+    subtitle: "Vascular Telemetry & Nutrient Partitioning",
+    description: "Empirical diagnostic quantification of micro-inflammation, atherogenic particle counts, fasting insulin sensitivity, and vascular longevity risk parameters.",
+  },
+  {
+    id: "neuro",
+    name: "Neuro-Executive & Cognitive",
+    count: "11 Markers",
+    image: "/images/neuro_category.png",
+    subtitle: "Synaptic Plasticity & Executive Stamina",
+    description: "Cerebrovascular clearance, neurotrophic factor elevation (BDNF), diurnal cortisol rhythm profiling, and homocysteine neuro-vascular indicators.",
+  },
+  {
+    id: "cellular",
+    name: "Cellular & Mitochondrial",
+    count: "10 Markers",
+    image: "/images/cellular_category.png",
+    subtitle: "Bioenergetics & NAD+ Availability",
+    description: "Direct measurement of intracellular coenzymes, mitochondrial ATP synthases, sirtuin activation catalysts, and master antioxidant buffers.",
+  },
+  {
+    id: "endocrine",
+    name: "Endocrine & Vitality",
+    count: "12 Markers",
+    image: "/images/endocrine_category.png",
+    subtitle: "Hormonal Balance & Anabolic Signaling",
+    description: "Comprehensive endocrine axis evaluation, bioavailable free testosterone index, DHEA-S adrenal reserves, and targeted IGF-1 growth dynamics.",
+  },
 ] as const;
 
 export const RSRV_BIOMARKERS: Biomarker[] = [
