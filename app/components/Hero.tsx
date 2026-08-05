@@ -5,7 +5,26 @@ export default function Hero() {
     <section className="hero">
       <div className="hero-bg" />
 
-      <div className="hero-content">
+      {/* Hero Ambient Backdrop Image Graphic */}
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          opacity: 0.35,
+          pointerEvents: "none",
+          zIndex: 1,
+        }}
+      >
+        <Image
+          src="/images/hero_ambient.svg"
+          alt="RSRV Ambient Background"
+          fill
+          style={{ objectFit: "cover" }}
+          priority
+        />
+      </div>
+
+      <div className="hero-content" style={{ zIndex: 2 }}>
         <span className="endorsement-line">
           By Reserve Molecular — Clinician-Directed
         </span>
@@ -22,10 +41,10 @@ export default function Hero() {
         <h1 className="hero-h1 font-display">The standard, extended.</h1>
 
         <p className="hero-sub">
-          Clinician-directed optimization protocols for established
-          professionals. Licensed clinicians direct every protocol;
-          prescriptions are compounded one patient at a time by licensed US 503A
-          pharmacies.
+          Clinician-directed optimization protocols engineered for established
+          professionals. Licensed US clinicians direct every protocol;
+          prescriptions are custom compounded one patient at a time by licensed US 503A
+          pharmacies under analytical diagnostic verification.
         </p>
 
         <div className="proof-bar">
@@ -37,11 +56,11 @@ export default function Hero() {
         </div>
 
         <div className="hero-ctas">
-          <a href="#protocols" className="btn-primary">
+          <a href="/protocols" className="btn-primary">
             Explore Protocols
           </a>
-          <a href="#verification" className="btn-secondary">
-            View Verification Standard
+          <a href="/governance" className="btn-secondary">
+            View 503A Governance
           </a>
         </div>
       </div>

@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="pipelineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#C2A15F" stop-opacity="0.2"/>
+      <stop offset="50%" stop-color="#C2A15F" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#F3F1EC" stop-opacity="0.4"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="400" fill="#0B0B0D"/>
+
+  <!-- Connecting Pipeline Line -->
+  <line x1="150" y1="200" x2="1050" y2="200" stroke="url(#pipelineGradient)" stroke-width="1.5" stroke-dasharray="6 4"/>
+
+  <!-- Node 1 -->
+  <g transform="translate(200, 200)">
+    <circle cx="0" cy="0" r="32" fill="#17171A" stroke="#C2A15F" stroke-width="1.5"/>
+    <text x="0" y="4" font-family="Archivo, sans-serif" font-size="12" font-weight="700" fill="#F3F1EC" text-anchor="middle">01</text>
+    <text x="0" y="60" font-family="Archivo, sans-serif" font-size="10" fill="#DCDAD4" letter-spacing="1" text-anchor="middle">DIAGNOSTIC INTAKE</text>
+    <text x="0" y="76" font-family="Archivo, sans-serif" font-size="8" fill="#9DA1A6" text-anchor="middle">45+ Biomarker Panel</text>
+  </g>
+
+  <!-- Node 2 -->
+  <g transform="translate(460, 200)">
+    <circle cx="0" cy="0" r="32" fill="#17171A" stroke="#C2A15F" stroke-width="1.5"/>
+    <text x="0" y="4" font-family="Archivo, sans-serif" font-size="12" font-weight="700" fill="#F3F1EC" text-anchor="middle">02</text>
+    <text x="0" y="60" font-family="Archivo, sans-serif" font-size="10" fill="#DCDAD4" letter-spacing="1" text-anchor="middle">PHYSICIAN REVIEW</text>
+    <text x="0" y="76" font-family="Archivo, sans-serif" font-size="8" fill="#9DA1A6" text-anchor="middle">Licensed US MD Direction</text>
+  </g>
+
+  <!-- Node 3 -->
+  <g transform="translate(720, 200)">
+    <circle cx="0" cy="0" r="32" fill="#17171A" stroke="#C2A15F" stroke-width="1.5"/>
+    <text x="0" y="4" font-family="Archivo, sans-serif" font-size="12" font-weight="700" fill="#F3F1EC" text-anchor="middle">03</text>
+    <text x="0" y="60" font-family="Archivo, sans-serif" font-size="10" fill="#DCDAD4" letter-spacing="1" text-anchor="middle">503A COMPOUNDING</text>
+    <text x="0" y="76" font-family="Archivo, sans-serif" font-size="8" fill="#9DA1A6" text-anchor="middle">USP &lt;797&gt;/&lt;800&gt; Sterile API</text>
+  </g>
+
+  <!-- Node 4 -->
+  <g transform="translate(980, 200)">
+    <circle cx="0" cy="0" r="32" fill="#17171A" stroke="#C2A15F" stroke-width="1.5"/>
+    <text x="0" y="4" font-family="Archivo, sans-serif" font-size="12" font-weight="700" fill="#F3F1EC" text-anchor="middle">04</text>
+    <text x="0" y="60" font-family="Archivo, sans-serif" font-size="10" fill="#DCDAD4" letter-spacing="1" text-anchor="middle">STANDING RESERVE</text>
+    <text x="0" y="76" font-family="Archivo, sans-serif" font-size="8" fill="#9DA1A6" text-anchor="middle">Synchronized Lab Re-test</text>
+  </g>
+</svg>

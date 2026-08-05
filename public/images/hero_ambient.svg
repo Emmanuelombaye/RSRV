@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 650" width="100%" height="100%">
+  <defs>
+    <radialGradient id="heroGlow" cx="50%" cy="40%" r="65%">
+      <stop offset="0%" stop-color="#1E1E24" stop-opacity="0.95"/>
+      <stop offset="60%" stop-color="#0B0B0D" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#050506" stop-opacity="1"/>
+    </radialGradient>
+    <linearGradient id="champagneGoldHairline" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C2A15F" stop-opacity="0.95"/>
+      <stop offset="50%" stop-color="#F3F1EC" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#C2A15F" stop-opacity="0.2"/>
+    </linearGradient>
+    <filter id="ambientShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="20" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="650" fill="#0B0B0D"/>
+  <rect width="1200" height="650" fill="url(#heroGlow)"/>
+
+  <!-- Architectural Terrace / Executive Study Lines -->
+  <g opacity="0.4" filter="url(#ambientShadow)">
+    <!-- Floor reflection plane -->
+    <ellipse cx="600" cy="520" rx="450" ry="60" fill="#000000" opacity="0.9"/>
+    
+    <!-- Minimalist framing -->
+    <line x1="150" y1="520" x2="1050" y2="520" stroke="url(#champagneGoldHairline)" stroke-width="1.25"/>
+    <line x1="250" y1="520" x2="450" y2="180" stroke="#DCDAD4" stroke-opacity="0.15" stroke-width="0.75"/>
+    <line x1="950" y1="520" x2="750" y2="180" stroke="#DCDAD4" stroke-opacity="0.15" stroke-width="0.75"/>
+    <line x1="450" y1="180" x2="750" y2="180" stroke="url(#champagneGoldHairline)" stroke-width="0.75"/>
+  </g>
+
+  <!-- Central Obsidian Vessel Motif -->
+  <g transform="translate(600, 340)">
+    <rect x="-70" y="-120" width="140" height="220" rx="10" fill="#141417" stroke="#22222A" stroke-width="1"/>
+    <path d="M -70 -120 L -70 100" fill="none" stroke="url(#champagneGoldHairline)" stroke-width="1.5"/>
+    <rect x="-50" y="-90" width="100" height="150" rx="2" fill="#0E0E10" stroke="url(#champagneGoldHairline)" stroke-opacity="0.3" stroke-width="0.75"/>
+    <text x="0" y="-45" font-family="Archivo, sans-serif" font-size="12" font-weight="700" fill="#F3F1EC" letter-spacing="3" text-anchor="middle">RSRV</text>
+    <text x="0" y="-30" font-family="Archivo, sans-serif" font-size="6" fill="#9DA1A6" letter-spacing="1.5" text-anchor="middle">STANDING RESERVE</text>
+    <line x1="-30" y1="-15" x2="30" y2="-15" stroke="#3A2E28" stroke-width="1"/>
+    <text x="0" y="5" font-family="Archivo, sans-serif" font-size="5.5" fill="#DCDAD4" letter-spacing="1" text-anchor="middle">US 503A COMPOUNDED</text>
+    <text x="0" y="20" font-family="Archivo, sans-serif" font-size="5.5" fill="#C2A15F" letter-spacing="1" text-anchor="middle">CLINICIAN-DIRECTED</text>
+  </g>
+
+  <!-- Subtle Rim Ambient Glow -->
+  <circle cx="600" cy="340" r="220" fill="none" stroke="#C2A15F" stroke-opacity="0.15" stroke-width="0.5"/>
+</svg>
