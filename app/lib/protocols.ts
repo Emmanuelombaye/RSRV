@@ -259,7 +259,7 @@ export const RSRV_PROTOCOLS: Protocol[] = [
       "High-concentration cellular energy protocol designed to restore NAD+ availability and enhance mitochondrial bioenergetics.",
     fullDescription:
       "Replete mitochondrial electron transport and sirtuin enzymatic activity at the cellular level. Delivers sterile, high-purity NAD+ alongside SIRT-activating compounds to repair DNA damage, improve cellular ATP output, and mitigate mitochondrial decay.",
-    image: "/images/gen4.jfif",
+    image: "/images/cellular_protocol.png",
     compounds: [
       { name: "Sterile Lyophilized NAD+", type: "Coenzyme Matrix", role: "Sirtuin Activation & Mitochondrial ATP Production" },
       { name: "Glutathione Compounded Infusion", type: "Master Antioxidant", role: "Intracellular Reactive Oxygen Species Clearance" },

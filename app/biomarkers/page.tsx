@@ -146,16 +146,77 @@ export default function BiomarkersPage() {
           <div className="biomarker-grid reveal-stagger">
             {filteredBiomarkers.map((bm) => (
               <div key={bm.name} className="biomarker-card">
-                <div>
+                {/* Section Micro Visual Header */}
+                <div
+                  style={{
+                    position: "relative",
+                    width: "calc(100% + 3.5rem)",
+                    height: "100px",
+                    margin: "-1.75rem -1.75rem 1.25rem -1.75rem",
+                    overflow: "hidden",
+                    borderBottom: "1px solid rgba(194,161,95,0.2)",
+                    background: "var(--rm-obsidian)",
+                  }}
+                >
+                  <Image
+                    src={currentCategory.image}
+                    alt={bm.name}
+                    fill
+                    style={{ objectFit: "cover", opacity: 0.85 }}
+                  />
                   <div
-                    className="data-annotation"
-                    style={{ fontSize: "0.65rem", marginBottom: "0.4rem" }}
+                    style={{
+                      position: "absolute",
+                      inset: 0,
+                      background:
+                        "linear-gradient(180deg, rgba(8,8,10,0.1) 0%, rgba(18,18,22,0.85) 75%, rgba(18,18,22,1) 100%)",
+                    }}
+                  />
+                  <div
+                    style={{
+                      position: "absolute",
+                      top: "0.75rem",
+                      left: "1rem",
+                      right: "1rem",
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                      zIndex: 2,
+                    }}
                   >
-                    Diagnostic Parameter
+                    <span
+                      className="data-annotation"
+                      style={{
+                        fontSize: "0.6rem",
+                        color: "var(--rm-champagne)",
+                        background: "rgba(8,8,10,0.75)",
+                        padding: "0.2rem 0.5rem",
+                        borderRadius: "2px",
+                        border: "1px solid rgba(194,161,95,0.3)",
+                      }}
+                    >
+                      {currentCategory.name.toUpperCase()}
+                    </span>
+                    <span
+                      className="data-annotation"
+                      style={{
+                        fontSize: "0.6rem",
+                        color: "var(--rm-silver)",
+                        background: "rgba(8,8,10,0.75)",
+                        padding: "0.2rem 0.4rem",
+                        borderRadius: "2px",
+                      }}
+                    >
+                      PARAM
+                    </span>
                   </div>
-                  <h3 className="bm-name font-display">{bm.name}</h3>
-                  <p className="bm-desc">{bm.description}</p>
                 </div>
+
+                <div style={{ display: "flex", flexDirection: "column", flexGrow: 1, justifyContent: "space-between" }}>
+                  <div>
+                    <h3 className="bm-name font-display">{bm.name}</h3>
+                    <p className="bm-desc">{bm.description}</p>
+                  </div>
 
                 <div
                   style={{
@@ -232,7 +293,8 @@ export default function BiomarkersPage() {
                   </div>
                 </div>
               </div>
-            ))}
+            </div>
+          ))}
           </div>
         </section>
       </main>
