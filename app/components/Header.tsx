@@ -45,11 +45,11 @@ export default function Header({ onOpenDrawer, onOpenIntake }: HeaderProps) {
 
         <nav className="desktop-nav">
           <ul className="nav-links">
-            <li><a href="#protocols" className="nav-link">Protocols</a></li>
-            <li><a href="#biomarkers" className="nav-link">Biomarkers</a></li>
-            <li><a href="#governance" className="nav-link">503A Governance</a></li>
-            <li><a href="#allocation" className="nav-link">Standing Reserve</a></li>
-            <li><a href="#faq" className="nav-link">FAQ</a></li>
+            <li><Link href="/protocols" className="nav-link">Protocols</Link></li>
+            <li><Link href="/biomarkers" className="nav-link">Biomarkers</Link></li>
+            <li><Link href="/governance" className="nav-link">503A Governance</Link></li>
+            <li><Link href="/allocation" className="nav-link">Standing Reserve</Link></li>
+            <li><a href="/#faq" className="nav-link">FAQ</a></li>
           </ul>
         </nav>
 
@@ -95,44 +95,44 @@ export default function Header({ onOpenDrawer, onOpenIntake }: HeaderProps) {
           <div className="mobile-nav-content" onClick={(e) => e.stopPropagation()}>
             <ul className="mobile-nav-list">
               <li>
-                <a
-                  href="#protocols"
+                <Link
+                  href="/protocols"
                   className="mobile-nav-link"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  Protocols
-                </a>
+                  Protocols Directory
+                </Link>
               </li>
               <li>
-                <a
-                  href="#biomarkers"
+                <Link
+                  href="/biomarkers"
                   className="mobile-nav-link"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Biomarker Diagnostics
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#governance"
+                <Link
+                  href="/governance"
                   className="mobile-nav-link"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   US 503A Governance
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#allocation"
+                <Link
+                  href="/allocation"
                   className="mobile-nav-link"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Standing Reserve
-                </a>
+                </Link>
               </li>
               <li>
                 <a
-                  href="#faq"
+                  href="/#faq"
                   className="mobile-nav-link"
                   onClick={() => setMobileMenuOpen(false)}
                 >
