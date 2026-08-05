@@ -159,7 +159,7 @@ export default function BiomarkersPage() {
                   }}
                 >
                   <Image
-                    src={currentCategory.image}
+                    src={bm.image || currentCategory.image}
                     alt={bm.name}
                     fill
                     style={{ objectFit: "cover", opacity: 0.85 }}

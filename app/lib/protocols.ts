@@ -5,6 +5,7 @@ export interface Biomarker {
   baselineTypical: string;
   rsrvTarget: string;
   description: string;
+  image?: string;
 }
 
 export interface ProtocolCompound {
@@ -97,6 +98,7 @@ export const RSRV_BIOMARKERS: Biomarker[] = [
     baselineTypical: "6.0 - 12.0",
     rsrvTarget: "2.0 - 4.5",
     description: "Primary biological indicator of cellular insulin sensitivity and systemic metabolic efficiency.",
+    image: "/images/bm_fasting_insulin.png",
   },
   {
     name: "Apolipoprotein B (ApoB)",
@@ -105,6 +107,7 @@ export const RSRV_BIOMARKERS: Biomarker[] = [
     baselineTypical: "90 - 120",
     rsrvTarget: "< 60",
     description: "Direct quantification of all atherogenic particle counts for cardiovascular longevity protection.",
+    image: "/images/bm_apob.png",
   },
   {
     name: "High-Sensitivity CRP (hs-CRP)",
@@ -113,6 +116,7 @@ export const RSRV_BIOMARKERS: Biomarker[] = [
     baselineTypical: "1.5 - 3.0",
     rsrvTarget: "< 0.5",
     description: "Systemic vascular and tissue micro-inflammation diagnostic marker.",
+    image: "/images/bm_hscrp.png",
   },
   {
     name: "HbA1c",
@@ -121,6 +125,7 @@ export const RSRV_BIOMARKERS: Biomarker[] = [
     baselineTypical: "5.4 - 5.7",
     rsrvTarget: "4.8 - 5.1",
     description: "90-day average blood glucose glycation level indicating metabolic trajectory.",
+    image: "/images/bm_hba1c.png",
   },
 
   // Neuro-Executive
@@ -131,6 +136,7 @@ export const RSRV_BIOMARKERS: Biomarker[] = [
     baselineTypical: "15,000 - 22,000",
     rsrvTarget: "> 28,000",
     description: "Essential neuro-signaling protein governing synaptic plasticity and neurogenesis.",
+    image: "/images/bm_bdnf.png",
   },
   {
     name: "Homocysteine",
@@ -139,6 +145,7 @@ export const RSRV_BIOMARKERS: Biomarker[] = [
     baselineTypical: "10.0 - 14.0",
     rsrvTarget: "6.0 - 8.0",
     description: "Neurovascular amino acid diagnostic marker linked to cerebrovascular clearance.",
+    image: "/images/bm_homocysteine.png",
   },
   {
     name: "Diurnal Cortisol Curve",
@@ -147,6 +154,7 @@ export const RSRV_BIOMARKERS: Biomarker[] = [
     baselineTypical: "Flattish Curve",
     rsrvTarget: "Optimal Awakening Rise",
     description: "HPA axis resilience metric measuring stress recovery and cognitive stamina.",
+    image: "/images/bm_cortisol.png",
   },
 
   // Cellular
@@ -157,6 +165,7 @@ export const RSRV_BIOMARKERS: Biomarker[] = [
     baselineTypical: "2.5 - 4.0",
     rsrvTarget: "> 8.5",
     description: "Mitochondrial bioenergetic capacity driving sirtuin activation and DNA repair mechanisms.",
+    image: "/images/bm_nad_ratio.png",
   },
   {
     name: "Glutathione (Reduced / GSH)",
@@ -165,6 +174,7 @@ export const RSRV_BIOMARKERS: Biomarker[] = [
     baselineTypical: "450 - 650",
     rsrvTarget: "> 900",
     description: "Master intracellular antioxidant buffering oxidative stress and cellular damage.",
+    image: "/images/cellular_protocol.png",
   },
   {
     name: "Coenzyme Q10 (CoQ10)",
@@ -173,6 +183,7 @@ export const RSRV_BIOMARKERS: Biomarker[] = [
     baselineTypical: "0.8 - 1.2",
     rsrvTarget: "> 2.5",
     description: "Mitochondrial electron transport chain cofactor for cellular ATP synthesis.",
+    image: "/images/cellular_category.png",
   },
 
   // Endocrine
@@ -183,6 +194,7 @@ export const RSRV_BIOMARKERS: Biomarker[] = [
     baselineTypical: "45 - 75",
     rsrvTarget: "120 - 160",
     description: "Bioavailable hormonal signaling for lean muscle retention, energy, and bone density.",
+    image: "/images/gen5.png",
   },
   {
     name: "Dehydroepiandrosterone Sulfate (DHEA-S)",
@@ -191,6 +203,7 @@ export const RSRV_BIOMARKERS: Biomarker[] = [
     baselineTypical: "150 - 240",
     rsrvTarget: "350 - 450",
     description: "Adrenal steroid precursor key for stress buffering and anabolic homeostasis.",
+    image: "/images/gen6.png",
   },
   {
     name: "Insulin-Like Growth Factor 1 (IGF-1)",
@@ -199,6 +212,7 @@ export const RSRV_BIOMARKERS: Biomarker[] = [
     baselineTypical: "110 - 160",
     rsrvTarget: "200 - 250",
     description: "Anabolic growth mediator driving systemic tissue repair and cellular regeneration.",
+    image: "/images/endocrine_category.png",
   },
 ];
 
