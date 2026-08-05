@@ -16,11 +16,13 @@ export default function Hero() {
         }}
       >
         <Image
-          src="/images/hero_ambient.svg"
+          src="/images/gen1.png"
           alt="RSRV Ambient Background"
           fill
           style={{ objectFit: "cover" }}
           priority
+          sizes="100vw"
+          quality={85}
         />
       </div>
 

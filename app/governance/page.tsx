@@ -57,11 +57,13 @@ export default function GovernancePage() {
             }}
           >
             <Image
-              src="/images/governance_pipeline_flow.svg"
+              src="/images/gen6.png"
               alt="US 503A Compounding Pipeline Architecture"
               fill
-              style={{ objectFit: "contain" }}
+              style={{ objectFit: "cover" }}
               priority
+              sizes="(max-width: 1200px) 100vw, 1200px"
+              quality={85}
             />
           </div>
 

@@ -174,7 +174,7 @@ export const RSRV_PROTOCOLS: Protocol[] = [
       "Clinician-directed protocol engineered to sustain cellular energy expenditure, insulin sensitivity, and visceral body composition.",
     fullDescription:
       "Engineered for high-performing executives seeking sustained metabolic output without energy troughs. Combines GLP-1/GIP receptor agonist signaling with targeted mitochondrial co-factors to optimize nutrient partitioning, lower visceral adiposity, and stabilize fasting insulin levels under monthly laboratory diagnostic verification.",
-    image: "/images/metabolic_protocol.png",
+    image: "/images/gen2.png",
     compounds: [
       { name: "Semaglutide / Tirzepatide Matrix", type: "Incretin Receptor Agonist", role: "Nutrient Partitioning & Glycemic Control" },
       { name: "L-Carnitine Compounded Buffer", type: "Mitochondrial Shuttle", role: "Long-Chain Fatty Acid Oxidation" },
@@ -198,7 +198,7 @@ export const RSRV_PROTOCOLS: Protocol[] = [
       "Targeted neuro-supportive protocol formulated to promote executive endurance, focus clarity, and neural pathway resilience.",
     fullDescription:
       "Designed specifically for intense cognitive workloads, executive decision-making, and neuro-protection. Utilizing high-affinity neuro-active peptides combined with cholinergic precursors, this protocol accelerates synaptogenesis, optimizes BDNF expression, and buffers brain micro-inflammation.",
-    image: "/images/cognitive_protocol.png",
+    image: "/images/gen3.png",
     compounds: [
       { name: "Semax / Selank Bio-Peptide Matrix", type: "Neuro-Active Peptide", role: "BDNF Upregulation & Focus Stamina" },
       { name: "Alpha-GPC Bio-Available Complex", type: "Cholinergic Precursor", role: "Acetylcholine Neurotransmitter Synthesis" },
@@ -222,7 +222,7 @@ export const RSRV_PROTOCOLS: Protocol[] = [
       "High-concentration cellular energy protocol designed to restore NAD+ availability and enhance mitochondrial bioenergetics.",
     fullDescription:
       "Replete mitochondrial electron transport and sirtuin enzymatic activity at the cellular level. Delivers sterile, high-purity NAD+ alongside SIRT-activating compounds to repair DNA damage, improve cellular ATP output, and mitigate mitochondrial decay.",
-    image: "/images/cellular_protocol.svg",
+    image: "/images/gen4.jfif",
     compounds: [
       { name: "Sterile Lyophilized NAD+", type: "Coenzyme Matrix", role: "Sirtuin Activation & Mitochondrial ATP Production" },
       { name: "Glutathione Compounded Infusion", type: "Master Antioxidant", role: "Intracellular Reactive Oxygen Species Clearance" },
@@ -246,7 +246,7 @@ export const RSRV_PROTOCOLS: Protocol[] = [
       "Custom compounded endocrine alignment protocol tailored specifically to restore natural hormonal dynamics and biological vigor.",
     fullDescription:
       "Clinician-directed hormonal optimization for high-stress executives experiencing age-related endocrine decline. Tailored individually based on baseline blood diagnostics to restore free testosterone, DHEA-S, and growth hormone secretagogue output while balancing estrogen and SHBG dynamics.",
-    image: "/images/endocrine_protocol.svg",
+    image: "/images/gen5.png",
     compounds: [
       { name: "Bio-Identical Hormone Matrix", type: "Compounded Hormone Vector", role: "Anabolic & Metabolic Signaling" },
       { name: "Sermorelin / Ipamorelin Secretagogue", type: "GH Releasing Peptide", role: "Endogenous HGH Pulse Restoration" },
