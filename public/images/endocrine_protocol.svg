@@ -1,28 +1,59 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
   <defs>
-    <radialGradient id="obsidianBg" cx="50%" cy="50%" r="60%">
-      <stop offset="0%" stop-color="#17171A" stop-opacity="0.9"/>
-      <stop offset="100%" stop-color="#0B0B0D" stop-opacity="1"/>
+    <radialGradient id="obsidianBgEndo" cx="50%" cy="50%" r="75%">
+      <stop offset="0%" stop-color="#191717" stop-opacity="0.95"/>
+      <stop offset="65%" stop-color="#0B0B0D" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#050506" stop-opacity="1"/>
     </radialGradient>
-    <linearGradient id="champagneGoldHairline" x1="0%" y1="100%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#C2A15F" stop-opacity="0.1"/>
-      <stop offset="50%" stop-color="#C2A15F" stop-opacity="0.85"/>
-      <stop offset="100%" stop-color="#F3F1EC" stop-opacity="0.3"/>
+    
+    <linearGradient id="vialBody" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0B0B0D"/>
+      <stop offset="20%" stop-color="#1E1D22"/>
+      <stop offset="50%" stop-color="#141317"/>
+      <stop offset="80%" stop-color="#1E1D22"/>
+      <stop offset="100%" stop-color="#0B0B0D"/>
     </linearGradient>
+
+    <linearGradient id="champagneGoldHairline" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#C2A15F" stop-opacity="1"/>
+      <stop offset="50%" stop-color="#F3F1EC" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#C2A15F" stop-opacity="0.3"/>
+    </linearGradient>
+
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
   </defs>
 
-  <rect width="800" height="500" fill="#0B0B0D"/>
-  <rect width="800" height="500" fill="url(#obsidianBg)"/>
+  <rect width="800" height="600" fill="#0B0B0D"/>
+  <rect width="800" height="600" fill="url(#obsidianBgEndo)"/>
 
-  <!-- Elegant organic endocrine wave geometry -->
-  <g>
-    <path d="M 150 250 C 250 150, 350 350, 450 250 C 550 150, 650 350, 750 250" fill="none" stroke="url(#champagneGoldHairline)" stroke-width="1.75"/>
-    <path d="M 150 270 C 250 170, 350 370, 450 270 C 550 170, 650 370, 750 270" fill="none" stroke="#DCDAD4" stroke-opacity="0.15" stroke-width="0.75"/>
-    <path d="M 150 230 C 250 130, 350 330, 450 230 C 550 130, 650 330, 750 230" fill="none" stroke="#C2A15F" stroke-opacity="0.25" stroke-width="0.75"/>
-  </g>
+  <!-- Pedestal reflection shadow -->
+  <ellipse cx="400" cy="510" rx="150" ry="22" fill="#000000" opacity="0.85" filter="url(#softGlow)"/>
 
-  <!-- Accent nodes -->
-  <circle cx="450" cy="250" r="3" fill="#C2A15F"/>
-  <circle cx="250" cy="150" r="2" fill="#DCDAD4" opacity="0.8"/>
-  <circle cx="650" cy="350" r="2" fill="#DCDAD4" opacity="0.8"/>
+  <!-- Endocrine Cylindrical Amber-Obsidian Vessel -->
+  <rect x="320" y="210" width="160" height="280" rx="16" fill="url(#vialBody)" stroke="#1A191E" stroke-width="1"/>
+
+  <!-- Rim light edge on the left -->
+  <path d="M 320 220 L 320 480" fill="none" stroke="url(#champagneGoldHairline)" stroke-width="1.75"/>
+  <path d="M 480 220 L 480 480" fill="none" stroke="#C2A15F" stroke-opacity="0.3" stroke-width="1"/>
+
+  <!-- Metallic Cap Ring -->
+  <rect x="340" y="160" width="120" height="50" rx="6" fill="#17161A" stroke="#28262E" stroke-width="1"/>
+  <rect x="340" y="160" width="120" height="6" fill="#C2A15F" opacity="0.8"/>
+
+  <!-- Inner Seal Ring -->
+  <line x1="340" y1="185" x2="460" y2="185" stroke="#C2A15F" stroke-opacity="0.4" stroke-width="0.75"/>
+
+  <!-- Label Deboss -->
+  <rect x="345" y="250" width="110" height="200" rx="2" fill="#121114" stroke="#25232A" stroke-width="0.75"/>
+  <rect x="345" y="250" width="110" height="200" rx="2" fill="none" stroke="#C2A15F" stroke-opacity="0.2" stroke-width="0.5"/>
+
+  <text x="400" y="290" font-family="Archivo, sans-serif" font-size="14" font-weight="700" fill="#F3F1EC" letter-spacing="3" text-anchor="middle">RSRV</text>
+  <text x="400" y="305" font-family="Archivo, sans-serif" font-size="7" fill="#9DA1A6" letter-spacing="1.5" text-anchor="middle">ENDOCRINE BALANCE</text>
+  <line x1="365" y1="320" x2="435" y2="320" stroke="#3A2E28" stroke-width="1"/>
+  <text x="400" y="345" font-family="Archivo, sans-serif" font-size="6.5" fill="#DCDAD4" letter-spacing="1" text-anchor="middle">BIO-IDENTICAL MATRIX</text>
+  <text x="400" y="360" font-family="Archivo, sans-serif" font-size="6" fill="#9DA1A6" letter-spacing="1" text-anchor="middle">US 503A COMPOUNDED</text>
+  <text x="400" y="415" font-family="Archivo, sans-serif" font-size="6" fill="#C2A15F" letter-spacing="1" text-anchor="middle">CLINICIAN-DIRECTED</text>
 </svg>
