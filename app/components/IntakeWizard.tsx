@@ -1,7 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { RSRV_PROTOCOLS, type Protocol } from "@/app/lib/protocols";
+import {
+  getActiveScreeningQuestions,
+  isScreeningComplete,
+  questionIsDisqualified,
+} from "@/app/lib/intake";
 
 interface IntakeWizardProps {
   open: boolean;
@@ -23,6 +28,23 @@ export default function IntakeWizard({
   const [cadence, setCadence] = useState<string>("90-Day Cadence");
   const [patientState, setPatientState] = useState<string>("NY");
   const [hasRecentLabs, setHasRecentLabs] = useState<string>("yes");
+  const [sex, setSex] = useState<string>("");
+  const [height, setHeight] = useState<string>("");
+  const [weight, setWeight] = useState<string>("");
+  const [clinicalAnswers, setClinicalAnswers] = useState<Record<string, string>>(
+    {}
+  );
+  const screeningIntake = useMemo(
+    () => ({ answers: clinicalAnswers, sexAtBirth: sex }),
+    [clinicalAnswers, sex],
+  );
+  const screeningQuestions = useMemo(
+    () => getActiveScreeningQuestions(screeningIntake),
+    [screeningIntake],
+  );
+  const setAnswer = (id: string, value: string) => {
+    setClinicalAnswers((prev) => ({ ...prev, [id]: value }));
+  };
 
   if (!open) return null;
 
@@ -63,7 +85,7 @@ export default function IntakeWizard({
               className="data-annotation"
               style={{ color: "var(--rm-champagne)" }}
             >
-              Clinician Intake — Step 0{step} of 04
+              Clinician Intake — Step 0{step} of 05
             </span>
             <span className="data-annotation">RSRV Governance</span>
           </div>
@@ -80,7 +102,7 @@ export default function IntakeWizard({
               style={{
                 height: "100%",
                 background: "var(--rm-champagne)",
-                width: `${(step / 4) * 100}%`,
+                width: `${(step / 5) * 100}%`,
                 transition: "width 0.3s ease",
               }}
             />
@@ -259,6 +281,79 @@ export default function IntakeWizard({
               </div>
             </div>
 
+            <div style={{ marginBottom: "1.5rem" }}>
+              <label
+                className="data-annotation"
+                style={{ display: "block", marginBottom: "0.5rem" }}
+              >
+                Sex assigned at birth
+              </label>
+              <div style={{ display: "flex", gap: "1rem" }}>
+                {["Male", "Female", "Other"].map((opt) => (
+                  <button
+                    key={opt}
+                    type="button"
+                    className="btn-secondary"
+                    style={{
+                      flex: 1,
+                      borderColor: sex === opt ? "var(--rm-champagne)" : undefined,
+                    }}
+                    onClick={() => setSex(opt)}
+                  >
+                    {opt}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div style={{ display: "flex", gap: "1rem", marginBottom: "1.5rem" }}>
+              <label style={{ flex: 1 }}>
+                <span
+                  className="data-annotation"
+                  style={{ display: "block", marginBottom: "0.5rem" }}
+                >
+                  Height
+                </span>
+                <input
+                  value={height}
+                  onChange={(e) => setHeight(e.target.value)}
+                  placeholder="5ft 10in"
+                  style={{
+                    width: "100%",
+                    padding: "0.85rem",
+                    background: "var(--rm-charcoal)",
+                    border: "1px solid rgba(220,218,212,0.12)",
+                    color: "var(--rm-bone)",
+                    borderRadius: 2,
+                    fontFamily: "inherit",
+                  }}
+                />
+              </label>
+              <label style={{ flex: 1 }}>
+                <span
+                  className="data-annotation"
+                  style={{ display: "block", marginBottom: "0.5rem" }}
+                >
+                  Weight (lbs)
+                </span>
+                <input
+                  type="number"
+                  value={weight}
+                  onChange={(e) => setWeight(e.target.value)}
+                  placeholder="185"
+                  style={{
+                    width: "100%",
+                    padding: "0.85rem",
+                    background: "var(--rm-charcoal)",
+                    border: "1px solid rgba(220,218,212,0.12)",
+                    color: "var(--rm-bone)",
+                    borderRadius: 2,
+                    fontFamily: "inherit",
+                  }}
+                />
+              </label>
+            </div>
+
             <div style={{ display: "flex", gap: "1rem", marginTop: "2rem" }}>
               <button
                 className="btn-secondary"
@@ -270,7 +365,119 @@ export default function IntakeWizard({
               <button
                 className="btn-primary"
                 style={{ flex: 2 }}
+                disabled={!sex || !height.trim() || !weight.trim()}
                 onClick={() => setStep(3)}
+              >
+                Continue to Screening
+              </button>
+            </div>
+          </div>
+        )}
+
+        {step === 3 && (
+          <div>
+            <h3
+              className="font-display"
+              style={{ fontSize: "1.75rem", marginBottom: "0.5rem" }}
+            >
+              Clinical screening
+            </h3>
+            <p
+              style={{
+                color: "var(--rm-platinum)",
+                fontSize: "0.9rem",
+                marginBottom: "1.5rem",
+              }}
+            >
+              Answer each question. Completing intake does not guarantee a prescription.
+            </p>
+            <div style={{ display: "flex", flexDirection: "column", gap: "1.15rem" }}>
+              {screeningQuestions.map((q) => {
+                const value = clinicalAnswers[q.id] || "";
+                const blocked = questionIsDisqualified(q, value);
+                return (
+                  <div key={q.id}>
+                    <p style={{ marginBottom: "0.5rem", fontSize: "0.95rem" }}>
+                      {q.question}
+                    </p>
+                    {q.type === "boolean" ? (
+                      <div style={{ display: "flex", gap: "0.75rem" }}>
+                        {(["yes", "no"] as const).map((opt) => (
+                          <button
+                            key={opt}
+                            type="button"
+                            className="btn-secondary"
+                            style={{
+                              flex: 1,
+                              borderColor:
+                                value === opt ? "var(--rm-champagne)" : undefined,
+                            }}
+                            onClick={() => setAnswer(q.id, opt)}
+                          >
+                            {opt === "yes" ? "Yes" : "No"}
+                          </button>
+                        ))}
+                      </div>
+                    ) : q.type === "select" ? (
+                      <select
+                        value={value}
+                        onChange={(e) => setAnswer(q.id, e.target.value)}
+                        style={{
+                          width: "100%",
+                          padding: "0.85rem",
+                          background: "var(--rm-charcoal)",
+                          border: "1px solid rgba(220,218,212,0.12)",
+                          color: "var(--rm-bone)",
+                          borderRadius: 2,
+                          fontFamily: "inherit",
+                        }}
+                      >
+                        <option value="">Select</option>
+                        {(q.options || []).map((opt) => (
+                          <option key={opt} value={opt}>
+                            {opt}
+                          </option>
+                        ))}
+                      </select>
+                    ) : (
+                      <textarea
+                        rows={3}
+                        value={value}
+                        onChange={(e) => setAnswer(q.id, e.target.value)}
+                        placeholder="Enter your answer…"
+                        style={{
+                          width: "100%",
+                          padding: "0.85rem",
+                          background: "var(--rm-charcoal)",
+                          border: "1px solid rgba(220,218,212,0.12)",
+                          color: "var(--rm-bone)",
+                          borderRadius: 2,
+                          fontFamily: "inherit",
+                        }}
+                      />
+                    )}
+                    {blocked ? (
+                      <p style={{ marginTop: "0.5rem", color: "#F87171", fontSize: "0.85rem" }}>
+                        This answer requires physician review before treatment can continue.
+                      </p>
+                    ) : null}
+                  </div>
+                );
+              })}
+            </div>
+            <div style={{ display: "flex", gap: "1rem", marginTop: "2rem" }}>
+              <button
+                className="btn-secondary"
+                style={{ flex: 1 }}
+                onClick={() => setStep(2)}
+              >
+                Back
+              </button>
+              <button
+                className="btn-primary"
+                style={{ flex: 2 }}
+                disabled={!isScreeningComplete(screeningIntake)}
+                onClick={() => setStep(4)}
               >
                 Continue to Allocation Setup
               </button>
@@ -278,8 +485,8 @@ export default function IntakeWizard({
           </div>
         )}
 
-        {/* Step 3: Allocation Cadence */}
-        {step === 3 && (
+        {/* Step 4: Allocation Cadence */}
+        {step === 4 && (
           <div>
             <h3
               className="font-display"
@@ -352,14 +559,14 @@ export default function IntakeWizard({
               <button
                 className="btn-secondary"
                 style={{ flex: 1 }}
-                onClick={() => setStep(2)}
+                onClick={() => setStep(3)}
               >
                 Back
               </button>
               <button
                 className="btn-primary"
                 style={{ flex: 2 }}
-                onClick={() => setStep(4)}
+                onClick={() => setStep(5)}
               >
                 Review & Submit Request
               </button>
@@ -367,8 +574,8 @@ export default function IntakeWizard({
           </div>
         )}
 
-        {/* Step 4: Summary & Confirmation */}
-        {step === 4 && (
+        {/* Step 5: Summary & Confirmation */}
+        {step === 5 && (
           <div>
             <h3
               className="font-display"
@@ -459,7 +666,7 @@ export default function IntakeWizard({
               <button
                 className="btn-secondary"
                 style={{ flex: 1 }}
-                onClick={() => setStep(3)}
+                onClick={() => setStep(4)}
               >
                 Back
               </button>
