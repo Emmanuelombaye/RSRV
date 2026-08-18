@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { FooterTrustBadges } from "./FooterTrustBadges";
 
 export default function Footer() {
   return (
@@ -44,6 +45,8 @@ export default function Footer() {
             </div>
           </div>
         </div>
+
+        <FooterTrustBadges />
 
         <div className="footer-bottom">
           <span>&copy; 2026 RSRV / Reserve Molecular. All rights reserved.</span>
